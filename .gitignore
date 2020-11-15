@@ -25,9 +25,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
-# Ignore Temp file upload
-public/uploads
+
 
 .vscode
 
@@ -35,4 +35,7 @@ public/uploads
 database.yml
 dwh_db.yml
 
-public/uploads/lead/attachment
+
+
+# Ignore application configuration
+/config/application.yml

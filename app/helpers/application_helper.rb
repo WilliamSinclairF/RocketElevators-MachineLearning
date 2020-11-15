@@ -1,10 +1,10 @@
 module ApplicationHelper
-   def resource_name
+  def resource_name
     :user
-   end
+  end
 
-  def resource_class 
-     User 
+  def resource_class
+    User
   end
 
   def resource

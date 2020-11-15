@@ -3,6 +3,15 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="container">
     <div class="form-inputs row text-center">
+      <div class="text-center col-12 mt-20">
+        <h3 class="fw-300">Tell Us About Yourself</h3>
+      </div>
+      <%= f.input :full_name, required: 'true' %>
+      <%= f.input :email, required: 'true' %>
+      <%= f.input :phone, required: 'true' %>
+      <div class="text-center col-12 mt-20">
+        <h3 class="fw-300">Information About Your Project</h3>
+      </div>
       <%= f.input :floors, input_html: {id: "floors"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
       <%= f.input :basements, input_html: {id: "basements"}, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
       <%= f.input :businesses, :onkeydown => 'return event.keyCode !== 69 && event.keyCode !== 189', required: 'true' %>
@@ -24,4 +33,5 @@
       <%= render 'quoteinfo' %>
     </div>
   </div>
+  <%= recaptcha_action('quote') %>
 <% end %>

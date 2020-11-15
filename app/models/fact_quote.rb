@@ -1,3 +1,1 @@
-class FactQuote < Second::Base
-  
-end
+class FactQuote < Second::Base; end

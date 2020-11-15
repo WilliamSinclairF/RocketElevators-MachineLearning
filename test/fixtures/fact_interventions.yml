@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  EmployeeID: 1
+  BuildingID: 1
+  BatteryID: 1
+  ColumnID: 1
+  result: MyString
+  report: MyText
+  status: MyString
+
+two:
+  EmployeeID: 1
+  BuildingID: 1
+  BatteryID: 1
+  ColumnID: 1
+  result: MyString
+  report: MyText
+  status: MyString

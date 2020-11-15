@@ -1,3 +1,1 @@
-class FactElevator < Second::Base
-  
-end
+class FactElevator < Second::Base; end

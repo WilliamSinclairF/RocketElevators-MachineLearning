@@ -1,6 +1,7 @@
 //= require chartkick
 //= require Chart.bundle
 //= require rails_admin/themes/material/ui.js
+//= require_tree .
 
 // $(document).on('turbolinks:load', function () { $.rails.refreshCSRFTokens(); });
 

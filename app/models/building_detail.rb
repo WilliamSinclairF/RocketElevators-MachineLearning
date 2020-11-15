@@ -4,5 +4,4 @@ class BuildingDetail < ApplicationRecord
   def custom_label_method
     "#{information_key}: #{value}"
   end
-
 end

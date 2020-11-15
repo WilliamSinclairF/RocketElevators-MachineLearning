@@ -1,7 +1,3 @@
 require 'test_helper'
 
-class BatteryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end
+class BatteryTest < ActiveSupport::TestCase; end # end #   assert true # test "the truth" do

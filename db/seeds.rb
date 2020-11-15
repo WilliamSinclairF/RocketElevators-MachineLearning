@@ -23,7 +23,7 @@ Elevator.destroy_all
 
 DatabaseCleaner.clean_with(:truncation)
 
-randCustomerCreation = 100
+randCustomerCreation = 20
 randEmployeeCreation = 21
 
 def seed_image
@@ -222,6 +222,7 @@ def create_customer randCustomerCreation
             number_and_street: addressy[0].street,
             suite_or_apartment: addressy[0].street.split(" ")[0],
             city: addressy[0].city,
+            state: addressy[0].state,
             postal_code: addressy[0].zip,
             country: "USA",
             notes: Faker::Lorem.sentence(word_count: rand(3..9).floor),
@@ -266,6 +267,7 @@ def create_customer randCustomerCreation
                 number_and_street: addressy[1].street,
                 suite_or_apartment: addressy[1].street.split(" ")[0],
                 city: addressy[1].city,
+                state: addressy[1].state,
                 postal_code: addressy[1].zip,
                 country: "USA",
                 notes: Faker::Lorem.sentence(word_count: rand(3..9).floor),
@@ -380,11 +382,11 @@ Building.all.each { |b|
     b.update_attributes(admin_contact_id: employee1.id)
     b.update_attributes(technical_contact_id: employee2.id)
 
-    b.update_attributes(technical_contact_full_name: employee2.first_name + employee2.last_name)
+    b.update_attributes(technical_contact_full_name: employee2.first_name + ' ' + employee2.last_name)
     b.update_attributes(technical_contact_email: employee2.email)
     b.update_attributes(technical_contact_phone: employee2.phone)
 
-    b.update_attributes(administrator_full_name: employee1.first_name + employee1.last_name)
+    b.update_attributes(administrator_full_name: employee1.first_name + ' ' + employee1.last_name)
     b.update_attributes(administrator_email: employee1.email)
     b.update_attributes(administrator_phone_number: employee1.phone)
 }
@@ -393,7 +395,6 @@ User.create(
     first_name: "Admin",
     email: "admin@admin.com",
     password: "admin123",
-
     is_admin: true,
     is_user: false
 )

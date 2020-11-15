@@ -1,14 +1,7 @@
 class StaticPagesController < ApplicationController
+  def index; end
 
-  # skip_before_action :authenticate_user!, :only => [:index, :residential, :corporate]
+  def residential; end
 
-  def index
-  end
-
-  def residential
-  end
-
-  def corporate
-  end
-  
+  def corporate; end
 end

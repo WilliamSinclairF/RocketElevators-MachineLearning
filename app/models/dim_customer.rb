@@ -1,3 +1,1 @@
-class DimCustomer < Second::Base
-  
-end
+class DimCustomer < Second::Base; end

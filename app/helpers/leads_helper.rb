@@ -1,2 +1,1 @@
-module LeadsHelper
-end
+module LeadsHelper; end
