@@ -35,6 +35,8 @@
 database.yml
 dwh_db.yml
 
+public/uploads
+
 
 
 # Ignore application configuration

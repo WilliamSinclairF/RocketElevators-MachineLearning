@@ -64,6 +64,10 @@ RailsAdmin.config do |config|
     navigation_label 'Statistics'
   end
 
+  config.model 'FactIntervention' do
+    navigation_label 'Statistics'
+  end
+
   config.model 'User' do
     object_label_method { :custom_label_method }
     exclude_fields :id
