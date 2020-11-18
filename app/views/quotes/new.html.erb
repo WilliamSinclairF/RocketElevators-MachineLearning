@@ -1,6 +1,3 @@
-<% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
-<% end %>
 <%= content_for :recaptcha_js do %>
   <%= include_recaptcha_js %>
 <% end %>
@@ -12,7 +9,7 @@
       <h2 class="fs-90 fw-300">GET A QUOTE</h2>
       <a class="btn btn-lg btn-default btn-lg" href="/">HOME <i class="fa fa-angle-right"></i></a>
       &nbsp; OR &nbsp;
-      <%= link_to root_path(anchor: "contact"), 'data-turbolinks': false do %>
+      <%= link_to root_path(anchor: "contact") do %>
         <span class="btn btn-lg btn-red">CONTACT US <i class="fa fa-angle-right"></i></span>
       <% end %>
     </div>
@@ -117,3 +114,4 @@
   <a href="#" id="toTop">
     <span class="arrow-top">▲</span>
   </a>
+  <%= javascript_include_tag 'quote' %>

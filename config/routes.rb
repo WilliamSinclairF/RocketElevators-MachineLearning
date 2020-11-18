@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
+
+  get '/search' => 'interventions#search', as: 'interventions_search'
+  get 'interventions', to: 'interventions#interventions'
+  get 'buildings', to: 'interventions#buildings'
+  get 'batteries', to: 'interventions#batteries'
+  get 'columns', to: 'interventions#columns'
+  get 'elevators', to: 'interventions#elevators'
+
+  resources :interventions
+
   resources :addresses, only: %i[index]
 
   resources :leads

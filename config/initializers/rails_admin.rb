@@ -48,6 +48,10 @@ RailsAdmin.config do |config|
     navigation_label 'Customers'
   end
 
+  config.model 'Intervention' do
+    navigation_label 'Customers'
+  end
+
   config.model 'FactElevator' do
     navigation_label 'Statistics'
   end
@@ -89,8 +93,10 @@ RailsAdmin.config do |config|
 
   config.main_app_name = ['Rocket Elevators', 'BackOffice']
 
-  config.navigation_static_label = 'Data Visualization'
-  config.navigation_static_links = { 'Customer Map' => '/addresses' }
+  config.navigation_static_label = 'Tools'
+  config.navigation_static_links = {
+    'Customer Map' => '/addresses', 'Intervention Form' => '/interventions/new'
+  }
 
   ## == CancanCan ==
   # config.authorize_with :cancancan

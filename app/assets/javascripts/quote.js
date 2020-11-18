@@ -1,9 +1,9 @@
-var fee, price, totalElev, totalCost, elevatorCostFee, elevatorCost;
+window.addEventListener('DOMContentLoaded', () => {
+  var fee, price, totalElev, totalCost, elevatorCostFee, elevatorCost;
 
-var apartments, floors, basements, cages, occupants, type, prodLine;
+  var apartments, floors, basements, cages, occupants, type, prodLine;
 
-function calc1() {
-    
+  function calc1() {
     // calculate avg apart per floor
     let avg = Math.ceil(apartments / floors);
 
@@ -20,18 +20,16 @@ function calc1() {
     var totalElevator = timeCol * elevatorInit;
 
     return totalElevator;
-}
+  }
 
-function calc2() {
-
+  function calc2() {
     // set the total num of elev to the num of cage entered
     totalElevator = Math.ceil(cages);
 
     return totalElevator;
-}
+  }
 
-function calc3() {
-
+  function calc3() {
     // calculate total num of floor including basement
     var stories = parseInt(floors, 10) + parseInt(basements, 10);
 
@@ -51,9 +49,9 @@ function calc3() {
     totalElevator = numElevatorCol * elevatorCol;
 
     return totalElevator;
-}
+  }
 
-function calcPrice() {
+  function calcPrice() {
     // cal cost for elev * price (7565, 12345, 15400)
     elevatorCost = totalElev * price;
 
@@ -62,119 +60,113 @@ function calcPrice() {
 
     // cal total cost (fee + elev cost)
     totalCost = elevatorCostFee + elevatorCost;
-}
+  }
 
-function prodLineCheck () {
-    if ($(type + " #quote_product_line_standard").prop("checked")) {
-        fee = 0.1;
-        price = 7565;
-    } else if ($(type + " #quote_product_line_premium").prop("checked")) {
-        fee = 0.13;
-        price = 12345;
-    } else if ($(type + " #quote_product_line_excelium").prop("checked")) {
-        fee = 0.16
-        price = 15400;
+  function prodLineCheck() {
+    if ($(type + ' #quote_product_line_standard').prop('checked')) {
+      fee = 0.1;
+      price = 7565;
+    } else if ($(type + ' #quote_product_line_premium').prop('checked')) {
+      fee = 0.13;
+      price = 12345;
+    } else if ($(type + ' #quote_product_line_excelium').prop('checked')) {
+      fee = 0.16;
+      price = 15400;
     }
-}
+  }
 
-function findCalc() {
+  function findCalc() {
     if (type == '#collapse10') {
-        totalElev = calc1();
-        
+      totalElev = calc1();
     } else if (type == '#collapse11') {
-        totalElev = calc2();
-
+      totalElev = calc2();
     } else if (type == '#collapse12') {
-        totalElev = calc3();
-
+      totalElev = calc3();
     } else if (type == '#collapse13') {
-        totalElev = calc3();
-
+      totalElev = calc3();
     } else {
-        // "SET ALERT or something"
-
+      // "SET ALERT or something"
     }
-}
+  }
 
-function infoUpdate () {
+  function infoUpdate() {
     apartments = parseInt($(type + ' #apartments').val(), 10);
     floors = parseInt($(type + ' #floors').val(), 10);
     basements = parseInt($(type + ' #basements').val(), 10);
     cages = parseInt($(type + ' #cages').val(), 10);
     occupants = parseInt($(type + ' #occupants').val(), 10);
-}
+  }
 
-function findType() {
+  function findType() {
     if ($('#collapse10').hasClass('show')) {
-        type = '#collapse10';
-        $(type + ' .building_type').val('Residential');
-
+      type = '#collapse10';
+      $(type + ' .building_type').val('Residential');
     } else if ($('#collapse11').hasClass('show')) {
-        type = '#collapse11';
-        $(type + ' .building_type').val('Commercial');
-
+      type = '#collapse11';
+      $(type + ' .building_type').val('Commercial');
     } else if ($('#collapse12').hasClass('show')) {
-        type = '#collapse12';
-        $(type + ' .building_type').val('Corporate');
-
+      type = '#collapse12';
+      $(type + ' .building_type').val('Corporate');
     } else if ($('#collapse13').hasClass('show')) {
-        type = '#collapse13';
-        $(type + ' .building_type').val('Hybrid');
-
+      type = '#collapse13';
+      $(type + ' .building_type').val('Hybrid');
     } else {
-        type = '0';
-        $(type + ' .building_type').val('');
+      type = '0';
+      $(type + ' .building_type').val('');
     }
-}
+  }
 
-function setResult() {
+  function setResult() {
     nan();
     findType();
     $(type + ' #total_elev').val(totalElev);
     $(type + ' #cost').val(elevatorCost.toFixed(2) + '$');
     $(type + ' #fees').val(elevatorCostFee.toFixed(2) + '$');
     $(type + ' #total_cost').val(totalCost.toFixed(2) + '$');
-    $(type + ' .total_price').val(parseFloat(totalCost,10).toFixed(2));
+    $(type + ' .total_price').val(parseFloat(totalCost, 10).toFixed(2));
     $(type + ' .install_fee').val(parseFloat(elevatorCostFee, 10).toFixed(2));
     $(type + ' .elevator_number').val(parseInt(totalElev, 10));
-}
+  }
 
-function nan() {
+  function nan() {
     if (isNaN(totalElev)) {
-        totalElev = 0;
+      totalElev = 0;
     }
 
     if (isNaN(totalCost)) {
-        totalCost = 0;
+      totalCost = 0;
     }
 
     if (isNaN(elevatorCost)) {
-        elevatorCost = 0;
+      elevatorCost = 0;
     }
 
     if (isNaN(elevatorCostFee)) {
-        elevatorCostFee = 0;
+      elevatorCostFee = 0;
     }
-}
+  }
 
-$('input').on('keyup change', () => {
+  $('input').on('keyup change', () => {
     findType();
     infoUpdate();
     prodLineCheck();
     findCalc();
     calcPrice();
     setResult();
-});
+  });
 
-$('.form-actions').addClass('center')
-$('.form-group').addClass('col-4 mt-15')
-$('.lead_project_description').removeClass('col-4').addClass('col-6')
-$('.lead_message').removeClass('col-4').addClass('col-6')
-$('.form-control-file').removeClass('form-control-file').addClass('form-control')
-$('textarea').css('height', '260px')
-$('.send-info').removeClass('col-4').addClass('col-2')
-$('select').addClass('text-dark')
-$('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
-$('.form-check').addClass('col-4').css('padding-left', '120px')
-$('.form-check-input').css('display', 'inline-block')
-$('.col-form-label').addClass('text-center')
+  $('.form-actions').addClass('center');
+  $('.form-group').addClass('col-4 mt-15');
+  $('.lead_project_description').removeClass('col-4').addClass('col-6');
+  $('.lead_message').removeClass('col-4').addClass('col-6');
+  $('.form-control-file')
+    .removeClass('form-control-file')
+    .addClass('form-control');
+  $('textarea').css('height', '260px');
+  $('.send-info').removeClass('col-4').addClass('col-2');
+  $('select').addClass('text-dark');
+  $('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row');
+  $('.form-check').addClass('col-4').css('padding-left', '120px');
+  $('.form-check-input').css('display', 'inline-block');
+  $('.col-form-label').addClass('text-center');
+});

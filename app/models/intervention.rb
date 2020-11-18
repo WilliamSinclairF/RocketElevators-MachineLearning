@@ -1,4 +1,4 @@
 class Intervention < ApplicationRecord
-  enum result: %i[incomplete failure in_progress complete]
-  enum status: %i[pending escalated resolved]
+  enum result: %w[Incomplete Failure Complete]
+  enum status: ['Pending', 'In Progress', 'Complete']
 end

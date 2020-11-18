@@ -1,0 +1,48 @@
+<section>
+  <div class="container">
+    <h1 class="text-center">New Intervention</h1>
+    <%= simple_form_for @intervention do |f| %>
+      <%= f.input :customer_id, as: :select, collection: Customer.all, label_method: :custom_label_method, prompt: "Select Customer" %>
+      <div class="form-group" id="building-section">
+        <label for="building">Building</label>
+        <select name="intervention[building_id]" class="form-control" id="intervention_building_id">
+          <option value="">None</option>
+        </select>
+      </div>
+      <div class="form-group" id="battery-section">
+        <label for="battery">Battery</label>
+        <select name="intervention[battery_id]" class="form-control" id="intervention_battery_id">
+          <option value="">None</option>
+        </select>
+      </div>
+      <div class="form-group" id="column-section">
+        <label for="column">Column</label>
+        <select name="intervention[column_id]" class="form-control" id="intervention_column_id">
+          <option value="">None</option>
+        </select>
+      </div>
+      <div class="form-group" id="elevator-section">
+        <label for="elevator">Elevator</label>
+        <select name="intervention[elevator_id]" class="form-control" id="intervention_elevator_id">
+          <option value="">None</option>
+        </select>
+      </div>
+      <div class="form-group" id="employee-section">
+        <%= f.input :employee_id, as: :select, collection: Employee.all, label_method: :custom_label_method, include_blank: "N/A" %>
+      </div>
+      <div class="form-group" id="status-section">
+        <%= f.input :status, as: :select, collection: Intervention.statuses, selected: 0, value_method: :first %>
+      </div>
+      <div class="form-group" id="result-section">
+        <%= f.input :result, as: :select, collection: Intervention.results, selected: 0, value_method: :first %>
+      </div>
+      <div class="form-group" id="report-section">
+        <%= f.input :report, as: :text %>
+        <div class="d-flex justify-content-center">
+          <%= f.button :submit , class: 'btn btn-lg btn-info'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+<%= javascript_include_tag 'interventions' %>

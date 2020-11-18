@@ -172,7 +172,7 @@
 </div>
 <!-- /REVOLUTION SLIDER -->
 <!-- BUTTON CALLOUT -->
-<%= link_to root_path(anchor: "contact"), 'data-turbolinks': false do %>
+<%= link_to root_path(anchor: "contact") do %>
   <span class="btn btn-xlg fullwidth btn-red fs-20 m-0 rad-0 p-40 hide-sm">
     <span class="font-lato fs-30">
       Did Rocket Elevators pick your curiosity ? 
@@ -216,7 +216,7 @@
       <h2 class="fs-40 fw-300">Elevating You With Safety, Speed And Style Since 1976</h2>
       <a class="btn btn-default btn-lg" href="/quotes/new">GET A QUOTE</a>
       &nbsp; OR &nbsp;
-      <%= link_to root_path(anchor: "contact"), 'data-turbolinks': false do %>
+      <%= link_to root_path(anchor: "contact") do %>
         <span class="btn btn-red btn-lg">CONTACT US</span>
       <% end %>
     </div>
@@ -748,3 +748,5 @@
 <a href="#" id="toTop">
   <span class="arrow-top">▲</span>
 </a>
+<%= javascript_include_tag 'jquery.themepunch.tools.min.js' %>
+<%= javascript_include_tag 'jquery.themepunch.revolution.min.js' %>

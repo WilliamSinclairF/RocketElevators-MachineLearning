@@ -11,21 +11,22 @@
 // about supported directives.
 //
 //= require activestorage
-//= require turbolinks
-//= require jquery
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require toastr
-//= require jquery-3.3.1.min.js
-//= require scripts.js
-//= require jquery.themepunch.tools.min.js
-//= require jquery.themepunch.revolution.min.js
 //= require demo.revolution_slider.js
 //= require owl.carousel.min.js
 //= require owl.carousel.js
-//= require quote.js
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require chartkick
 //= require Chart.bundle
 //= require rails_admin/themes/material/ui.js
 //= require_tree .
+//= stub 'quote.js'
+//= stub 'interventions.js'
+//= stub 'scripts.js'
+//= stub 'jquery.themepunch.tools.min.js'
+//= stub 'jquery.themepunch.revolution.min.js'

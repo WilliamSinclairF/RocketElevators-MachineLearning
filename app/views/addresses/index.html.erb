@@ -1,5 +1,4 @@
 <% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["MAPS_API_KEY"]}" %>
   <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
   <script>
