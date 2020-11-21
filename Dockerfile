@@ -42,11 +42,21 @@ COPY Gemfile.lock ${APP_HOME}/Gemfile.lock
 RUN gem install bundler
 
 RUN bundle install
+RUN gem install bundler -v 2.0.1
+
+RUN bundle install
 
 # Copy the project over
 COPY . ${APP_HOME}
+RUN gem install bundler -v 2.0.1
 
 # Map port 8080 to the outside world (your local computer)
 EXPOSE 8080
+RUN bundle install
+
+RUN bin/rails db:migrate RAILS_ENV=development
+RUN bin/rails db:seed
+RUN bin/rails dwh:db:migrate RAILS_ENV=development
+RUN bin/rails dwh:sync
 
 ENTRYPOINT ["sh", "./entrypoint.sh"]
