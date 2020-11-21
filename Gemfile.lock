@@ -61,6 +61,7 @@ GEM
     autoprefixer-rails (10.0.2.0)
       execjs
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.0.1)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -403,6 +404,7 @@ DEPENDENCIES
   actionpack-cloudflare
   activerecord-suppress_range_error (~> 0.1.1)
   addressy (~> 0.0.2)
+  bcrypt_pbkdf (~> 1)
   better_errors (~> 2.8, >= 2.8.3)
   binding_of_caller (~> 0.8.0)
   bootsnap (>= 1.1.0)
@@ -423,7 +425,7 @@ DEPENDENCIES
   database_cleaner-active_record
   devise
   dropbox_api
-  ed25519 (~> 1.2, >= 1.2.4)
+  ed25519 (~> 1.2)
   excon
   faker (~> 2.14)
   figaro
