@@ -1,6 +1,13 @@
 class InterventionsController < ApplicationController
   include InterventionsHelper
+
+  before_action :authenticate_user!
+
   def interventions; end
+
+  def index
+    @interventions = Intervention.all
+  end
 
   def buildings
     buildings = Building.where(customer_id: params[:id])
@@ -32,7 +39,18 @@ class InterventionsController < ApplicationController
     @intervention = Intervention.new(intervention_params)
     @intervention.author_id = current_user.id
     @intervention.save
-    intervention_zd_ticket(@intervention) if @intervention.save
+
+    respond_to do |format|
+      if @intervention.save
+        intervention_zd_ticket(@intervention)
+        format.html do
+          redirect_to my_interventions_path,
+                      notice: 'Intervention created successfully!'
+        end
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   private

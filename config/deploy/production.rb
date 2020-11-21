@@ -6,7 +6,7 @@
 server 'rocket-elevators.eastus.cloudapp.azure.com',
        user: 'william', roles: %w[app db web] # server "db.example.com", user: "deploy", roles: %w{db}
 app = ENV['APP']
-app = 'TeamJorgeMarcoux' if app.nil? or app.empty?
+app = 'William' if app.nil? or app.empty?
 set :application, app
 set :rails_env, 'development'
 set :bundle_without, 'production'

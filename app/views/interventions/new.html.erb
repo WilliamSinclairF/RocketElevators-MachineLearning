@@ -1,8 +1,8 @@
-<section>
+<section id="intervention">
   <div class="container">
     <h1 class="text-center">New Intervention</h1>
     <%= simple_form_for @intervention do |f| %>
-      <%= f.input :customer_id, as: :select, collection: Customer.all, label_method: :custom_label_method, prompt: "Select Customer" %>
+      <%= f.input :customer_id, as: :select, collection: Customer.all, label_method: :custom_label_method, prompt: "Select Customer", required: true %>
       <div class="form-group" id="building-section">
         <label for="building">Building</label>
         <select name="intervention[building_id]" class="form-control" id="intervention_building_id">
@@ -28,13 +28,7 @@
         </select>
       </div>
       <div class="form-group" id="employee-section">
-        <%= f.input :employee_id, as: :select, collection: Employee.all, label_method: :custom_label_method, include_blank: "N/A" %>
-      </div>
-      <div class="form-group" id="status-section">
-        <%= f.input :status, as: :select, collection: Intervention.statuses, selected: 0, value_method: :first %>
-      </div>
-      <div class="form-group" id="result-section">
-        <%= f.input :result, as: :select, collection: Intervention.results, selected: 0, value_method: :first %>
+        <%= f.input :employee_id, as: :select, collection: Employee.all, label_method: :custom_label_method, include_blank: "None" %>
       </div>
       <div class="form-group" id="report-section">
         <%= f.input :report, as: :text %>

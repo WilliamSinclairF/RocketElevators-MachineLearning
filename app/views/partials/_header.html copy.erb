@@ -1,19 +1,19 @@
 <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
   <!-- TOP NAV -->
   <header id="topNav">
-    <div class="container">
+    <div class="container-fluid">
       <!-- Mobile Menu Button -->
       <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
         <i class="fa fa-bars"></i>
       </button>
       <!-- Logo -->
-      <a class="logo float-left scrollTo" href="#top">
-        <%= image_tag('logo/R2.png') %>
+      <a class="logo float-left scrollTo">
+        <%= link_to image_tag('logo/R2.png') %>
       </a>
-      <div class="navbar-collapse collapse float-right nav-main-collapse">
+      <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
         <nav class="nav-main">
-          <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-            <li class="active">
+          <ul id="topMain" class="nav nav-pills nav-main nav-hover nav-onepage">
+            <li class="active"><!-- HOME -->
               <%= link_to 'HOME', root_path %>
             </li>
             <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
@@ -42,39 +42,28 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact")%>
             </li>
-            <li><!-- CONTACT -->
-              <a href="#contact">
-                CONTACT
-              </a>
-            </li>
+            <% if can? :read, Quote %>
+              <li><!-- BACKOFFICE -->
+                <%= link_to 'BACKOFFICE', rails_admin_path %>
+              </li>
+              <li>
+                <%= link_to 'INTERVENTIONS', interventions_path %>
+              </li>
+            <% end %>
             <% if user_signed_in? %>
               <!-- ACCOUNT DROPDOWN -->
               <li class="dropdown nav-animate-fadeIn resp-active">
-                <% if current_user.is_admin? || current_user.is_employee? %>
-                  <%= link_to 'EMPLOYEE SECTION', edit_user_registration_path %>
-                <% else %>
-                  <%= link_to 'MY ACCOUNT', edit_user_registration_path %>
-                <% end  %>
+                <%= link_to 'MY ACCOUNT', edit_user_registration_path %>
                 <ul class="dropdown-menu">
                   <li class="dropdown">
-                    <%= link_to 'MY PROFILE', edit_user_registration_path %>
+                    <%= link_to 'MY ACCOUNT', edit_user_registration_path %>
                   </li>
-                  <% if current_user.is_employee? || current_user.is_admin? %>
-                    <li>
-                      <%= link_to 'INTERVENTIONS', interventions_path %>
-                    </li>
-                    <li><!-- BACKOFFICE -->
-                      <%= link_to 'BACKOFFICE', rails_admin_path %>
-                    </li>
-                  <% end %>
-                  <% unless current_user.is_employee? || current_user.is_admin? %>
-                    <li class="dropdown">
-                      <%= link_to 'MY QUOTES', my_quotes_path %>
-                    </li>
-                    <li class="dropdown">
-                      <%= link_to 'MY LEADS', my_leads_path %>
-                    </li>
-                  <% end %>
+                  <li class="dropdown">
+                    <%= link_to 'MY QUOTES', my_quotes_path %>
+                  </li>
+                  <li class="dropdown">
+                    <%= link_to 'MY LEADS', my_leads_path %>
+                  </li>
                   <li class="dropdown">
                     <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
                   </li>
@@ -88,9 +77,10 @@
                 </li>
               <% end %>
             </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- /Top Nav -->
-  </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+<!-- /Top Nav -->

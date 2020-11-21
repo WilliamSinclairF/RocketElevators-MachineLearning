@@ -6,10 +6,16 @@ const batteryInput = document.getElementById('intervention_battery_id');
 const columnInput = document.getElementById('intervention_column_id');
 const elevatorInput = document.getElementById('intervention_elevator_id');
 
+const emptyInputs = () => {
+  $(buildingInput).empty();
+  $(batteryInput).empty();
+  $(columnInput).empty();
+  $(elevatorInput).empty();
+};
+
 $(customerInput).change(e => {
   $('#building-section').show();
   $('#battery-section').hide();
-  $('#employee-section').hide();
   $('#status-section').hide();
   $('#result-section').hide();
   $('#report-section').hide();
@@ -21,10 +27,9 @@ $(customerInput).change(e => {
     method: 'GET',
     data: { id: e.target.value },
     success: data => {
-      $(buildingInput).empty();
+      emptyInputs();
       buildingInput.append(new Option('None', ''));
       data.map(e => {
-        console.log(e);
         let street = e.address.number_and_street;
         let city = e.address.city;
         let state = e.address.state;
@@ -39,7 +44,6 @@ $(customerInput).change(e => {
 
 $(buildingInput).change(e => {
   $('#battery-section').show();
-  $('#employee-section').show();
   $('#status-section').show();
   $('#result-section').show();
   $('#report-section').show();
@@ -52,7 +56,9 @@ $(buildingInput).change(e => {
       batteryInput.append(new Option('None', ''));
       data.map(e => {
         console.log(e);
-        batteryInput.append(new Option('Battery ' + e.id, e.id));
+        batteryInput.append(
+          new Option(`Battery ID ${e.id} - Status: ${e.battery_status}`, e.id)
+        );
       });
     },
   });
@@ -68,7 +74,9 @@ $(batteryInput).change(e => {
       $(columnInput).empty();
       columnInput.append(new Option('None', ''));
       data.map(e => {
-        columnInput.append(new Option('Column ' + e.id, e.id));
+        columnInput.append(
+          new Option(`Column ID ${e.id} - Status: ${e.column_status}`, e.id)
+        );
       });
     },
   });
@@ -85,7 +93,10 @@ $(columnInput).change(e => {
       elevatorInput.append(new Option('None', ''));
       data.map(e => {
         elevatorInput.append(
-          new Option(`Elevator ID ${e.id} - SN: ${e.serial_number}`, e.id)
+          new Option(
+            `Elevator ID ${e.id} - SN: ${e.serial_number} - Status: ${e.elevator_status}`,
+            e.id
+          )
         );
       });
     },

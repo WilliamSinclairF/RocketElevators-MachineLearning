@@ -1,0 +1,69 @@
+<style>
+  .grecaptcha-badge {
+      visibility: hidden;
+  }
+</style>
+<section style="min-height: 100vh;">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h1 class="fw-300 text-blue">Interventions</h1>
+    </div>
+    <div class="container">
+      <span id="notice"><%= notice %></span>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Intervention ID</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Building</th>
+            <th scope="col">Assigned Employee</th>
+            <th scope="col">Battery ID</th>
+            <th scope="col">Elevator ID</th>
+            <th scope="col">Column ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Report</th>
+            <th scope="col">Intervention Start Date</th>
+            <th scope="col">Intervention End Date</th>
+            <th scope="col">Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @interventions.each do |i| %>
+            <tr>
+              <td><%= i.id %></td>
+              <td><%= i.created_at %></td>
+              <td>
+                <% if i.customer_id? %>
+                  <%= Customer.find(i.customer_id).custom_label_method %>
+                <% end %>
+              </td>
+              <td>
+                <% if i.building_id? %>
+                  <%= Address.find(i.building_id).full_address %>
+                <% end %>
+              </td>
+              <td>
+                <% if i.employee_id? %>
+                  <%= Employee.find(i.employee_id).custom_label_method %>
+                <% end %>
+              </td>
+              <td><%= i.battery_id %></td>
+              <td><%= i.column_id %></td>
+              <td><%= i.elevator_id %></td>
+              <td><%= i.status %></td>
+              <td><%= i.report %></td>
+              <td><%= i.intervention_start_date_time %></td>
+              <td><%= i.intervention_end_date_time %></td>
+              <td><%= i.result %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <div class="text-center">
+        <%= button_to "New Quote", { :action => "new" }, :method => :get, :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</section>

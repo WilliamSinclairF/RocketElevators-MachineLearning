@@ -146,8 +146,8 @@ ActiveRecord::Schema.define(version: 2020_11_15_193933) do
     t.integer "employee_id"
     t.datetime "intervention_start_date_time"
     t.datetime "intervention_end_date_time"
-    t.string "status"
-    t.string "result"
+    t.string "status", default: "Pending"
+    t.string "result", default: "Incomplete"
     t.text "report"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
