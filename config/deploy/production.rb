@@ -1,16 +1,10 @@
-# server-based syntax
-# ======================
-# Defines a single server with a list of roles and multiple properties.
-# You can define all roles on a single server, or split them:
-
-server 'rocket-elevators.eastus.cloudapp.azure.com',
-       user: 'william', roles: %w[app db web] # server "db.example.com", user: "deploy", roles: %w{db}
+server '99.79.123.96', user: 'ubuntu', roles: %w[app db web] # server "db.example.com", user: "deploy", roles: %w{db}
 app = ENV['APP']
-app = 'William' if app.nil? or app.empty?
+app = 'WilliamSinclair' if app.nil? or app.empty?
 set :application, app
 set :rails_env, 'development'
 set :bundle_without, 'production'
-set :deploy_to, "/home/william/apps/#{app}"
+set :deploy_to, "/home/ubuntu/apps/#{app}"
 set :linked_dirs, %w[tmp/pids tmp/sockets log]
 set :linked_files,
     %w[config/database.yml config/dwh_db.yml config/application.yml]
@@ -23,41 +17,6 @@ set :linked_files,
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w['rocket-elevators.eastus.cloudapp.azure.com]
-role :web, %w['rocket-elevators.eastus.cloudapp.azure.com]
-role :db, %w['rocket-elevators.eastus.cloudapp.azure.com]
-
-# Configuration
-# =============
-# You can set any configuration variable like in config/deploy.rb
-# These variables are then only loaded and set in this stage.
-# For available Capistrano configuration variables see the documentation page.
-# http://capistranorb.com/documentation/getting-started/configuration/
-# Feel free to add new variables to customise your setup.
-
-# Custom SSH Options
-# ==================
-# You may pass any option but keep in mind that net/ssh understands a
-# limited set of options, consult the Net::SSH documentation.
-# http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start
-#
-# Global options
-# --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-#
-# The server-based syntax can be used to override options:
-# ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: "please use keys"
-#   }
+role :app, %w[ubuntu@99.79.123.96]
+role :web, %w[ubuntu@99.79.123.96]
+role :db, %w[ubuntu@99.79.123.96]
