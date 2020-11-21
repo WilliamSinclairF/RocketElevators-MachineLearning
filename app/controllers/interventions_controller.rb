@@ -44,7 +44,7 @@ class InterventionsController < ApplicationController
       if @intervention.save
         intervention_zd_ticket(@intervention)
         format.html do
-          redirect_to my_interventions_path,
+          redirect_to interventions_path,
                       notice: 'Intervention created successfully!'
         end
       else
