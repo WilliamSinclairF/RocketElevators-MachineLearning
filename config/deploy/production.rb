@@ -9,6 +9,7 @@ set :linked_dirs, %w[tmp/pids tmp/sockets log]
 set :linked_files,
     %w[config/database.yml config/dwh_db.yml config/application.yml]
 
+
 # role-based syntax
 # ==================
 
