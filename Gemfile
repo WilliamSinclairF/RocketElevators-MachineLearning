@@ -78,7 +78,14 @@ gem 'bootsnap', '>= 1.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
+
 end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 4.0.0'
+end
+
 
 group :development do
   # Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.

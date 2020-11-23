@@ -30,22 +30,22 @@
                 </li>
               </ul>
             </li>
-            <li><!-- PORTFOLIO -->
-              <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
-            </li>
-            <li><!-- NEWS -->
-              <%= link_to 'NEWS', root_path(anchor: "news") %>
-            </li>
-            <li><!-- CLIENTS -->
-              <%= link_to 'CLIENTS', root_path(anchor: "clients") %>
+            <li class="dropdown nav-animate-fadeIn resp-active"><!-- SERVICES -->
+              <%= link_to 'ABOUT US', root_path(anchor: "portfolio") %>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <%= link_to 'PORTFOLIO', root_path(anchor: "portfolio") %>
+                </li>
+                <li class="dropdown">
+                  <%= link_to 'INDUSTRY NEWS', root_path(anchor: "news") %>
+                </li>
+                <li class="dropdown">
+                  <%= link_to 'OUR CLIENTS', root_path(anchor: "clients") %>
+                </li>
+              </ul>
             </li>
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact")%>
-            </li>
-            <li><!-- CONTACT -->
-              <a href="#contact">
-                CONTACT
-              </a>
             </li>
             <% if user_signed_in? %>
               <!-- ACCOUNT DROPDOWN -->
