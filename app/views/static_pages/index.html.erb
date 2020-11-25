@@ -1,4 +1,4 @@
-<%= render 'static_pages/index_partials/hero'%>
+<%= render 'static_pages/index_partials/hero', weather: @weather%>
 <!-- BUTTON CALLOUT -->
 <%= link_to root_path(anchor: "contact") do %>
   <span class="btn btn-xlg fullwidth btn-red fs-20 m-0 rad-0 p-40 hide-sm">
@@ -358,7 +358,6 @@
         </figure>
         <div class="testimonial-content p-0">
           <p class="lead">"Hi There !"</p>
-          <%# William should be editing this line %>
           <cite>
             William Sinclair
             <span>Rocket Elevators' Employee</span>
@@ -371,7 +370,6 @@
         </figure>
         <div class="testimonial-content p-0">
           <p class="lead">"Hi There !"</p>
-          <%# William should be editing this line %>
           <cite>
             Frimina Zaddi
             <span>Rocket Elevators' Employee</span>

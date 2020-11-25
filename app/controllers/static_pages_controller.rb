@@ -1,5 +1,8 @@
+require 'elevator_media'
 class StaticPagesController < ApplicationController
-  def index; end
+  def index
+    @weather = ElevatorMedia::Streamer.get_content
+  end
 
   def residential; end
 

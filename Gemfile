@@ -84,6 +84,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 4.0.0'
+  gem 'webmock'
 end
 
 
