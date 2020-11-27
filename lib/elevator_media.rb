@@ -34,7 +34,7 @@ module ElevatorMedia
         "<span>Current temperature: #{c_temperature} - #{
           dynamic_message
         }</span>"
-      return htmt_string
+      return html_string
     end
   end
 end

@@ -26,9 +26,7 @@ DatabaseCleaner.clean_with(:truncation)
 randCustomerCreation = 20
 randEmployeeCreation = 21
 
-def seed_image
-    File.open(File.join(Rails.root, "/app/assets/images/noYou/image.png"))
-end
+
 
 def create_employee randEmployeeCreation
     u1 = User.create(
@@ -255,7 +253,6 @@ def create_customer randCustomerCreation
             department: ["Elevator Consultant", "Building Manager", "Architect"].sample,
             project_description: Faker::Lorem.paragraph(sentence_count: 5),
             message: Faker::Lorem.paragraph(sentence_count: 5),
-            attachment: seed_image,
             created_at: Time.at((tmp_user.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
         )
 
