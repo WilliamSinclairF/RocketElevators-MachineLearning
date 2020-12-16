@@ -213,10 +213,10 @@ recognizer.recognizeOnceAsync(
 
 
 
-function transcribe(){
+function transcribe(voiceSignatureStringUser1, voiceSignatureStringUser2){
     var subscriptionKey = process.env.key_var;
     var region2 = process.env.region_var;
-    var filepath = "sounds/vampIntroTrevor.wav"; // 8-channel audio
+    var filepath = "sounds/vampIntro2_8chan.wav"; // 8-channel audio
 
     // create the push stream and write file to it
     var pushStream = sdk.AudioInputStream.createPushStream();
@@ -295,10 +295,17 @@ async function main() {
     // speachtotext()
 
 
-    var newProfile = await createProfile.createProfile();
+    
+    // var newProfile1 = await createProfile.createProfile("sounds/vampIntroTrevor.wav");
+    // var newProfile2 = await createProfile.createProfile("sounds/final_testJoey.wav");
 
-    console.log (newProfile);
-    transcribe();
+    newProfile1 = '{"Version":"0","Tag":"K7mZx5IfNYo0MmJV5WoxQp9i/bKwWsdGf8YH7rNNgdQ=","Data":"+blZ1e03y8aaUE9RpjkKBKlOEseeKaZPO8gHRSOmwwi4hGJfxLtFS8s0Dj7Na59Y8EUHxIb5g/je++ZdUx59yXOUjRiS9HSEjJ2Zhz1YlRq/QGyA99mWmHDpMFxlNS8IRk3ogfuzzkr2AYAxBuM3NUUmSu22NbE7vo4gOoITy7dg7e7WZqi5rZxOvZFA6iM8zW2B4DB3gTi90knN25wSjrTKL+TGO9Rynq0Vm/xpqYuzg/dobJ/rQN7uZYwWcQCZO3yV0U/55XbModkyo60i1U9c5hq9l8dNIfoQVNaOL/yyCuNy0MYuSN3aByFTtiWufrhMCoEBxlU2KE6MHU1vYsbI1paIj61Fcgea9/IBVffquI0uPdBU+PVDLdBJY75ymmYaj+kRKbzg7sCchUpXITOs44+wpklTGjjeZyL6NfoSl95zOPyhApXRhxxtq5mudIGod6JpibYxIkwrvZLSO5QiL0MCXQt01WorqWZ7aTFM3WzrVWEH2cbNV8c9Qd45C4V2A5Eb4O7qauM5uagFCVrR9Fce+/rgHKmDNYkkFPPSdD7tOGq30uf9V2IIf2MgOH7Tn2vykCiiJEs7BGGQM7WyPZBDkudd4IF8vGjX90uAMC7X4hEr/xtNaRoTf3L/QuQTVeij16S89Z01ZNrRLaEIsELiF+SOg/BzgmG24TcDH6JEPxz1ZabVa/zTcwdG"}';
+    newProfile2 = '{"Version":"0","Tag":"uwjIjqLXnxpTonED5FW35FQOOBYIvvVdDNJRm06ikns=","Data":"tfHY7Lc4V6iHRUd1ziX4bcO6jmIaaHn/oiHcc0/vQtnOCcCicLDt1zlMf/5BL8Mb2DxY5HXhzbG11k/dLoBOfxRnxmqwcSZWrGzNFVjA/EV6ipvZQRjrfjUjbk3aRLu7UeSZ7Qb8upx4ny3nAhP2y+imc37nXgGM9d3i2WcA5s+02yrh67G8dVFw9OiwmmBjwyQM6iVcJbe7WY58K3HSM10vMWmor32sTvGwsrhzdqnO0Iyj6ovGvw/pus07yoQUYHren4fFMLvPygu7lzXtrs2nYarODniBg8i9HoDoG2qcv1hpfCU6GIDpu7eA/S+TuVIdY+INhctNb4mF0vJeKl6eVvIep4E1hs8lQ5Epyfwa7a2AeK/Oix/HoUIG79iaaBux/rjFIteg0xFIljXkQnKsleG0Byx4gIIJngP81pFMqxuLG/fquzlEaPAgtFBUPmjrGd3z75MDGyGio9iytHj53TOqCrYfv/vFwo5/tKwvzjqOvvDv1g0pexUkOml9Gb4C6KDoGO2KG/rPBuFWYFKSIv5oZpsQv6il96Vm3sn2LYGxvAh/MaWss7Pckb9/3UyVINH3Thmi9fjXlujlewMevPvf++YWrZvFeebTYBvqQqo9X1hp4q+envysCckjwR7kECtZuDgZE96T8tsww3Oc9vkfrSR457RrwFFY0xb9wTi4ycwfF5Zj1Prw3JFO"}'
+
+    console.log (newProfile1);
+    console.log ("________________________________________________________________________");
+    console.log (newProfile2);
+    transcribe(newProfile1, newProfile2);
 
 
 }

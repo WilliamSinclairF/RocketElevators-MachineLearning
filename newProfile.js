@@ -11,9 +11,9 @@ var region = process.env.SPEECH_REGION;
 
  
 module.exports = {
-    createProfile: async function () {
+    createProfile: async function (file_path) {
         let form = new formData();
-        form.append('file', fs.createReadStream("sounds/vampIntroTrevor.wav"));
+        form.append('file', fs.createReadStream(file_path));
         let headers = form.getHeaders();
         headers['Ocp-Apim-Subscription-Key'] = subscription_key;
     
