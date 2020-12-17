@@ -33,13 +33,13 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
 ## Team
 
  > [Trevor Kitchen][4]
-
+ >
  > [Fabian Dimitrov][1] 
-
+ >
  > [Loic Rico][3]
-
+ >
  > [William Sinclair][5]
-
+ >
  > [Joey Coderre][2]
 
   [1]: https://github.com/ArtificialSoda
