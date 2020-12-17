@@ -1,0 +1,173 @@
+    <!-- REVOLUTION SLIDER -->
+<div class="slider fullwidthbanner-container roundedcorners">
+  <div class="text-center"><i class="fa fa-info"></i> <%= @weather.html_safe %></div>
+  <div class="fullwidthbanner hide-sm" data-height="600" data-shadow="0" data-navigationStyle="preview2">
+    <ul class="hide">
+      <!-- SLIDE  -->
+      <li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Elevate Safety">
+        <!-- MAIN IMAGE -->
+        <%= image_tag('slide/slide_1_com.jpg', :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+        <div class="overlay dark-6"></div>
+        <div class="tp-caption font-roboto sfl tp-resizeme"
+                        data-x="50"
+                        data-y="120" 
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="600"
+                        style="z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+          Elevate Safely With <br />
+          Speed and Style
+        </div>
+        <div class="tp-caption content_text_center skewfromleft tp-resizeme"
+                        data-x="50"
+                        data-y="300" 
+                        data-speed="500"
+                        data-start="2000"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="600"
+
+                        style="z-index: 3; font-size:35px; color:#fff; font-weight:300; text-shadow:none;">
+          Dreaming of an elevator inside your cozy home ? <br />
+          Our team has experts all around the world for your needs.
+        </div>
+        <div class="tp-caption sfl tp-resizeme"
+                        data-x="50"
+                        data-y="450" 
+                        data-speed="300"
+                        data-start="2500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="300"
+                            
+                        style="z-index: 6; max-width: auto; white-space: nowrap;">
+          <a class="btn btn-lg btn-default btn-media" href="/quotes/new">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
+                        data-x="270"
+                        data-y="450" 
+                        data-speed="300"
+                        data-start="2500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="300"
+
+                        style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
+          <a class="btn btn-lg btn-red btn-media" href="#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+        </div>
+      </li>
+      <!--SLIDE-->
+      <li data-transition="parallaxtoleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Residential">
+        <!-- MAIN IMAGE -->
+        <%= image_tag("slide/slide_2_com.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+        <div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
+        <div class="tp-caption font-roboto skewfromleft tp-resizeme"
+                        data-x="50"
+                        data-y="100" 
+                        data-speed="500"
+                        data-start="1500"
+                        data-easing="Cubic.easeOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="500"
+                        style="z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+          Modern problems require<br>
+          modern solutions !
+        </div>
+        <div class="tp-caption skewfromrightshort tp-resizeme"
+                        data-x="50"
+                        data-y="300" 
+                        data-speed="500"
+                        data-start="1000"
+                        data-easing="easeInCirc"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="500"
+                        style="z-index: 3; font-size:35px; color:#fff; font-weight:300; text-shadow:none;">
+          Rocket Elevators. The leader in Elevators since 1976 !
+        </div>
+        <div class="tp-caption sfb tp-resizeme"
+                        data-x="50"
+                        data-y="410" 
+                        data-speed="500"
+                        data-start="1500"
+                        data-easing="Power3.easeIn"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="500"
+                        style="z-index: 4; max-width: auto;">
+          <a class="btn btn-red btn-lg btn-media" href="static_pages/residential">SERVICE DETAILS &nbsp; <i class="fa fa-angle-right"></i></a>
+        </div>
+      </li>
+      <!-- SLIDE  -->
+      <li data-transition="parallaxright" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Corporate">
+        <!-- MAIN IMAGE -->
+        <%= image_tag("slide/slide_3_com.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+        <div class="overlay dark-5"><!-- dark overlay [0 to 9 opacity] --></div>
+        <div class="tp-caption font-roboto sfl tp-resizeme"
+                        data-x="100"
+                        data-y="165" 
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="600"
+                        style="z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none; text-align: right;">
+          Tired of taking the stairs ?
+        </div>
+        <div class="tp-caption skewfromrightshort tp-resizeme"
+                        data-x="100"
+                        data-y="285" 
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="600"
+                        style="z-index: 3; font-size: 30px; color:#fff; font-weight:300; text-shadow:none; text-align: left;">
+          Get in touch with us now <br>
+          and order one of our brand new elevator models for corporate buildings !
+        </div>
+        <div class="tp-caption sfb tp-resizeme"
+                        data-x="100"
+                        data-y="410" 
+                        data-speed="400"
+                        data-start="1500"
+                        data-easing="Power3.easeInOut"
+                        data-splitin="none"
+                        data-splitout="none"
+                        data-elementdelay="0.1"
+                        data-endelementdelay="0.1"
+                        data-endspeed="600"
+                        style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+          <a class="btn btn-red btn-lg btn-media" href="static_pages/corporate">SERVICE DETAILS &nbsp; <i class="fa fa-angle-right"></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

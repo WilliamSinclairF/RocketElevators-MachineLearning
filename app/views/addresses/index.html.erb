@@ -1,0 +1,31 @@
+<% provide :head_tags do %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["MAPS_API_KEY"]}" %>
+  <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      let key = "<%= ENV['MAPS_API_KEY'] %>"
+      let addresses = <%= @addresses.html_safe %>
+      JSON.stringify(key)
+      JSON.stringify(addresses)
+      initMap(addresses, key)
+    });
+  </script>
+<% end %>
+<nav class='navbar navbar-default navbar-fixed-top address-nav'>
+  <a class='navbar-brand pjax' href='/backoffice/'>
+    Rocket Elevators
+    <small>BackOffice</small>
+  </a>
+  <%= link_to 'Back To Dashboard', rails_admin_path, class: 'pjax' %>
+  <%= link_to 'Home', root_path %>
+  <%= link_to "#{current_user.custom_label_method}", edit_user_registration_path %>
+  <%= link_to 'Log out', destroy_user_session_path %>
+</nav>
+<div class="map-container">
+  <div class='text-center'>
+    <h3 class="fw-300 m-5">Customer Map</h3>
+    <i class="fas fa-info-circle text-blue fa-2x"></i>
+    <p>Click on a cluster to visualize customers in an area.</p>
+  </div>
+  <div id="map"></div>
+</div>
