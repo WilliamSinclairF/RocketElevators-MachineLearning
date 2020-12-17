@@ -1,0 +1,16 @@
+<h1>Test Audio Files</h1>
+<h3 id="resultText"></h3>
+<form>
+  <% @files.each do |file| %>
+    <div>
+      <label for="<%=file%>"><%=file%></label>
+      <input type="radio" id="<%=file%>" name="fileSelection" value="<%=file%>"/>
+    </div>
+  <% end %>
+  <select id="profileSelect">
+    <% @profiles.each do |p| %>
+      <option value="<%= p[:id] %>"><%=p[:name] %></option>
+    <% end %>
+  </select>
+  <button type="button" id="checkAudioButton">Check Audio</button>
+</form>

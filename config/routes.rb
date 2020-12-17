@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get 'batteries', to: 'interventions#batteries'
     get 'columns', to: 'interventions#columns'
     get 'elevators', to: 'interventions#elevators'
+    get 'speech', to: 'azure_speech#index'
+    get 'verify_audio', to: 'azure_speech#verify_audio'
   end
 
   resources :leads
