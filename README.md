@@ -7,9 +7,15 @@ This week we had to create a Machine learning API using the Azure Api **Speech**
 
 
 #
-### <i class="icon-file"></i> Exemple of how the  *Speech Api* actually work:
+### Exemple of how the  *Speech Api* actually work:
 
 ![](images/mermaidGraph.png)
+First we create a *.wav* sound in this specific specs : **Rate** = *16000Hz*, **Format** = *16-bit*, **Channel** = *1(Mono)*.
+|# Rate                         |Format         |Channel|
+|-------------------------------|---------------|-------|
+|`16000Hz`            			|`16-bit`       |1(Mono)|
+
+We then enroll the *.wav* sound and extract them for modeling and then send to the database. Once enrolled we can use an other sample and let the **API** compare the 2 sounds together 
 
 > **Pros:** The **Speech-To-Text** worked really well and the transcription doesnt differ a lot from the true result.
 
