@@ -12,6 +12,9 @@ Rails.application.config.assets.precompile += %w[scripts.js]
 Rails.application.config.assets.precompile += %w[jquery.themepunch.tools.min.js]
 Rails.application.config.assets.precompile +=
   %w[jquery.themepunch.revolution.min.js]
+Rails.application.config.assets.precompile += %w[sdk.js]
+Rails.application.config.assets.precompile += %w[transcribe.js]
+Rails.application.config.assets.precompile += %w[azure_speech.js]
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

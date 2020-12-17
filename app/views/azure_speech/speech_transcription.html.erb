@@ -1,0 +1,156 @@
+<div id="content">
+  <table>
+    <tr>
+      <td></td>
+      <td>
+        <h1 style="font-weight:500;">Speech Recognition</h1>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Language:</td>
+      <td align="left">
+        <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
+        <select id="languageOptions">
+          <option value="en-CA">English - CA</option>
+          <option value="en-GB">English - GB</option>
+          <option value="en-US" selected="selected">English - US</option>
+          <option value="fr-CA">French - CA</option>
+          <option value="fr-FR">French - FR</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Format:</td>
+      <td align="left">
+        <select id="formatOptions">
+          <option value="Simple" selected="selected">Simple Result</option>
+          <option value="Detailed">Detailed Result</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Input:</td>
+      <td align="left">
+        <select id="inputSource">
+          <option value="Mic" selected="selected">Microphone</option>
+          <option value="File">Audio File</option>
+        </select>
+        <select id="microphoneSource" style="display:none">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="file" id="filePicker" accept=".wav" style="display:none" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><b>Recognize Single Phrase:</b></td>
+      <td>
+        <button id="speechsdkStartRecognizeOnceAsync">START</button>
+        <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled">STOP</button>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><b>Continuous Speech Recognition:</b></td>
+      <td>
+        <button id="speechsdkStartContinuousRecognition">START</button>
+        <button id="speechsdkStopContinuousRecognition" disabled="disabled">STOP</button>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><b>Speech Translation:</b></td>
+      <td>
+        <button id="speechsdkStartContinuousTranslation">START</button>
+        <button id="speechsdkStopContinuousTranslation" disabled="disabled">STOP</button>
+        <select id="languageTargetOptions">
+          <option value="Microsoft Server Speech Text to Speech Voice (ar-EG, Hoda)">Arabic - EG</option>
+          <option value="Microsoft Server Speech Text to Speech Voice (ca-ES, HerenaRUS)">Catalan - ES
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (da-DK, HelleRUS)">Danish - DK
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (de-DE, Hedda)" selected="selected">
+            German - DE</option>
+          <option value="Microsoft Server Speech Text to Speech Voice (en-AU, Catherine)">English - AU
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (en-CA, Linda)">English - CA
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (en-GB, Susan, Apollo)">English - GB
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (en-IN, Heera, Apollo)">English - IN
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (en-US, ZiraRUS)">English - US
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (es-ES, Laura, Apollo)">Spanish - ES
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (es-MX, HildaRUS)">Spanish - MX
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (fi-FI, HeidiRUS)">Finnish - FI
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (fr-CA, Caroline)">French - CA
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (fr-FR, Julie, Apollo)">French - FR
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (hi-IN, Hemant)">Hindi - IN</option>
+          <option value="Microsoft Server Speech Text to Speech Voice (it-IT, LuciaRUS)">Italian - IT
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (ja-JP, Ayumi, Apollo)">Japanese -
+            JP</option>
+          <option value="Microsoft Server Speech Text to Speech Voice (ko-KR, HeamiRUS)">Korean - KR
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (nb-NO, HuldaRUS)">Norwegian - NO
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (nl-NL, HannaRUS)">Dutch - NL
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (pl-PL, PaulinaRUS)">Polish - PL
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (pt-BR, HeloisaRUS)">Portuguese - BR
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (pt-PT, HeliaRUS)">Portuguese - PT
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (ru-RU, Irina, Apollo)">Russian - RU
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (sv-SE, HedvigRUS)">Swedish - SE
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (zh-CN, Kangkang, Apollo)">Chinese -
+            CN</option>
+          <option value="Microsoft Server Speech Text to Speech Voice (zh-HK, Tracy, Apollo)">Chinese - HK
+          </option>
+          <option value="Microsoft Server Speech Text to Speech Voice (zh-TW, Yating, Apollo)">Chinese -
+            TW</option>
+        </select>
+        <input id="voiceOutput" type="checkbox" checked>
+        <label for="voiceOutput">voice output</label>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Results:</td>
+      <td align="left">
+        <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">Events:</td>
+      <td align="left">
+        <textarea id="statusDiv"
+                        style="display: inline-block;width:500px;height:200px;overflow: scroll;white-space: nowrap;"></textarea>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- Speech SDK REFERENCE -->
+<!-- Speech Speech SDK Authorization token -->
+<!-- Speech SDK USAGE -->
+<script>
+  // On document load resolve the Speech SDK dependency
+  function Initialize(onComplete) {
+      if (!!window.SpeechSDK) {
+  
+          onComplete(window.SpeechSDK);
+      }
+  }
+  const key = "<%= ENV['AZURE_KEY'] %>"
+</script>
+<%= javascript_include_tag 'sdk' %>
+<%= javascript_include_tag 'transcribe' %>

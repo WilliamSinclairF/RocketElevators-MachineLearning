@@ -2,20 +2,17 @@
   <h1 class="text-center">Azure Speech Services</h1>
   <h3 class="text-center">Create New Profile</h3>
   <form>
-    <input type="text" id="profileId"  placeholder="Profile ID" disabled>
-    <button type="button" class="btn btn-primary" id="genProfile">Generate Profile ID</button>
     <input type="file" id="uploadAudioSignatureFile" multiple>
-    <button type="button" class="btn btn-primary" id="uploadFileButton">Upload Voice Signature Audio</button>
-    <button type="button" class="btn btn-primary" id="genProfile">Enroll Profile</button>
+    <button type="button" class="btn btn-primary" id="enrollProfileButton">Enroll Profile</button>
   </form>
   <div class="container row">
     <div class='text-center col-md-8'>
       <h3 class="text-center">Upload Audio</h3>
       <form class='d-flex justify-content-center'>
         <div class="form-group">
-          <label for="uploadFile">Upload Audio Clip (.wav files only)</label>
-          <input type="file" id="uploadNewFile" class='form-control-file' multiple>
-          <button type="button" class="btn btn-primary" id="uploadNewFileButton">Upload Audio</button>
+          <label for="uploadFile">Upload new audio clip to test against a profile (.wav files only)</label>
+          <input type="file" id="uploadNewFile" class='form-control-file' accept=".wav">
+          <button type="button" class="btn btn-primary" id="uploadNewFileButton">Upload</button>
         </div>
       </form>
     </div>
@@ -36,7 +33,7 @@
           <h3>2. Select Voice Profile</h3>
           <select id="profileSelect" class='form-control'>
             <% @profiles.each do |p| %>
-              <option value="<%= p[:id] %>">Profile ID: <%=p[:id] %></option>
+              <option value="<%= p.profile_id %>"><%= p.user_name %> </option>
             <% end %>
           </select>
         </div>
@@ -46,3 +43,4 @@
     </div>
   </div>
 </section>
+<% javascript_include_tag 'azure_speech' %>

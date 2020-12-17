@@ -30,6 +30,10 @@ docker.env
 /config/master.key
 /config/credentials.yml.enc
 
+public/uploads/lead
+public/uploads/user
+public/uploads/tmp
+
 
 
 .vscode
@@ -38,7 +42,6 @@ docker.env
 database.yml
 dwh_db.yml
 
-public/uploads
 
 
 
