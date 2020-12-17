@@ -207,15 +207,9 @@ recognizer.recognizeOnceAsync(
 
 
 
-
-
-
-
-
-
 function transcribe(voiceSignatureStringUser1, voiceSignatureStringUser2){
-    var subscriptionKey = process.env.key_var;
-    var region2 = process.env.region_var;
+    var subscriptionKey = process.env.SPEECH_SUBSCRIPTION_KEY;
+    var region2 = process.env.SPEECH_REGION;
     var filepath = "sounds/vampIntro2_8chan.wav"; // 8-channel audio
 
     // create the push stream and write file to it
@@ -305,6 +299,7 @@ async function main() {
     console.log (newProfile1);
     console.log ("________________________________________________________________________");
     console.log (newProfile2);
+    console.log (newProfile1)
     transcribe(newProfile1, newProfile2);
 
 
