@@ -7,7 +7,7 @@ This week we had to create a Machine learning API using the Azure Api **Speech**
 
 
 #
-### Exemple of how the  *Speech Api* actually work:
+### <i class="icon-file"></i> Exemple of how the  *Speech Api* actually work:
 
 ![](images/mermaidGraph.png)
 
