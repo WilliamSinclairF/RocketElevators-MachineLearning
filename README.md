@@ -31,7 +31,7 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
 
 
 ## Team
-
+![](images/teamlogo.png)
  > [Trevor Kitchen][4]
 
  > [Fabian Dimitrov][1] 
@@ -48,4 +48,4 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
   [4]: https://github.com/trevorius
   [5]: https://github.com/WilliamSinclairF
 
-  ![](images/teamlogo.png)
+  
