@@ -52,5 +52,3 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
   [3]: https://github.com/ricoloic
   [4]: https://github.com/trevorius
   [5]: https://github.com/WilliamSinclairF
-
-![](images/audacity.jpg)
