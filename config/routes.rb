@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     get 'elevators', to: 'interventions#elevators'
     get 'speech', to: 'azure_speech#index'
     get 'verify_audio', to: 'azure_speech#verify_audio'
+    post 'upload_audio', to: 'azure_speech#upload_audio'
+    get 'create_profile_id', to: 'azure_speech#create_profile_id'
+    post 'enroll_profile', to: 'azure_speech#upload_audio'
   end
 
   resources :leads
