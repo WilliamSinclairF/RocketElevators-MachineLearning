@@ -1,14 +1,28 @@
+require 'excon'
+
 class AzureSpeechController < ApplicationController
   include AzureSpeechHelper
 
   def index
-    @profiles = []
+    get_azure_token
     @files =
       Dir['public/uploads/voice/*.wav'].select { |f| File.file? f }.map do |f|
         File.basename f
       end
-    azureVoiceProfiles = getProfiles
-    azureVoiceProfiles.map { |hash| @profiles.push({ id: hash['profileId'] }) }
+    @profiles = ProfileId.all
+  end
+
+  def speech_transcription; end
+
+  def enroll_new_profile
+    file_name = params[:file_name]
+    profile_id = params[:profile_id]
+    enrolled_profile = enroll_profile(file_name, profile_id)
+    p = ProfileId.new
+    p.profile_id = profile_id
+    p.user_name = "#{file_name} - #{current_user.custom_label_method}"
+    p.save!
+    respond_to { |r| r.json { render json: enrolled_profile } }
   end
 
   def create_profile_id
@@ -25,6 +39,7 @@ class AzureSpeechController < ApplicationController
 
   def upload_audio
     uploaded_file = params[:file]
+    puts File.extname(uploaded_file.to_s)
     FileUtils.mkdir_p 'public/uploads/voice'
     File.open(
       Rails.root.join(

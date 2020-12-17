@@ -5,9 +5,13 @@ const createProfile = async () => {
     },
   });
   const parsed = await response.json();
-  console.log(parsed.profileId);
-
-  const uploadedFile = await uploadAudioFile('uploadAudioSignatureFile');
+  const newProfileId = parsed.profileId;
+  await uploadAudioFile('uploadAudioSignatureFile');
+  const fileName = document.getElementById('uploadAudioSignatureFile').files[0]
+    .name;
+  await fetch(
+    `/enroll_profile?file_name=${fileName}&profile_id=${newProfileId}`
+  );
 };
 
 const verifyAudio = async (audioFileName, profileId) => {
@@ -28,18 +32,28 @@ const verifyAudio = async (audioFileName, profileId) => {
 
 const uploadAudioFile = async element => {
   let audioFile = document.getElementById(`${element}`).files[0];
-  let formData = new FormData();
-  formData.append('file', audioFile);
-  const response = await fetch('/upload_audio', {
-    method: 'POST',
-    body: formData,
-  });
-  if (response.ok) {
-    // location.reload();
-    console.log('uploaded');
+  if (getExtension(audioFile.name) === 'wav') {
+    let formData = new FormData();
+    formData.append('file', audioFile);
+    const response = await fetch('/upload_audio', {
+      method: 'POST',
+      body: formData,
+    });
+    if (response.ok) {
+      console.log('uploaded');
+    } else {
+      document.getElementById(
+        'resultText'
+      ).textContent = `Unable to upload file`;
+    }
   } else {
-    document.getElementById('resultText').textContent = `Unable to upload file`;
+    console.log('only wav files are accepted');
   }
+};
+
+const getExtension = filename => {
+  const parts = filename.split('.');
+  return parts[parts.length - 1];
 };
 
 const showTestResult = (result, score) => {
@@ -62,6 +76,14 @@ window.addEventListener('DOMContentLoaded', async () => {
     .getElementById('uploadNewFileButton')
     .addEventListener('click', async () => {
       await uploadAudioFile('uploadNewFile');
+      console.log('ok');
+    });
+
+  document
+    .getElementById('enrollProfileButton')
+    .addEventListener('click', async () => {
+      await createProfile();
+      location.reload();
       console.log('ok');
     });
 });

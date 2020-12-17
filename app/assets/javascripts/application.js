@@ -30,3 +30,6 @@
 //= stub 'scripts.js'
 //= stub 'jquery.themepunch.tools.min.js'
 //= stub 'jquery.themepunch.revolution.min.js'
+//= stub 'sdk.js'
+//= stub 'transcribe.js'
+//= stub 'azure_speech.js'
