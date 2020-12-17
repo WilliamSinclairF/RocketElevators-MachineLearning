@@ -39,7 +39,7 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
  > [Loic Rico][3]
 
  > [William Sinclair][5]
- 
+
  > [Joey Coderre][2]
 
   [1]: https://github.com/ArtificialSoda
@@ -47,3 +47,5 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
   [3]: https://github.com/ricoloic
   [4]: https://github.com/trevorius
   [5]: https://github.com/WilliamSinclairF
+
+  ![](images/teamlogo.png)
