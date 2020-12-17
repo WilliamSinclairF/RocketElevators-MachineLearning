@@ -1,5 +1,5 @@
 ![](images/R2.png)
-# RocketElevators-MachineLearning
+# Machine Learning
 Contains all the code for the week 13 for Machine Learning
 
 ### Week 13 overview
