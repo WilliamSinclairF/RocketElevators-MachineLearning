@@ -27,15 +27,20 @@ This week we had to create a Machine learning API using the Azure Api **Speech**
 
 ## Team
 
- > Trevor Kitchen
+ > [Trevor Kitchen][4]
 
- > Fabian Dimitrov 
+ > [Fabian Dimitrov][1] 
 
- > Loic Rico
+ > [Loic Rico][3]
 
- > William Sinclair
+ > [William Sinclair][5]
 ​
 
- > Joey Coderre 
+ > [Joey Coderre][2]
 ​
 ​
+  [1]: https://github.com/ArtificialSoda
+  [2]: https://github.com/Jcoderre
+  [3]: https://github.com/ricoloic
+  [4]: https://github.com/trevorius
+  [5]: https://github.com/WilliamSinclairF
