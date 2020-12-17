@@ -38,7 +38,7 @@ This week we had to create a Machine learning API using the Azure Api **Speech**
 
  > [Joey Coderre][2]
 ​
-​[^stackedit]: [StackEdit](https://stackedit.io/)
+
 
   [1]: https://github.com/ArtificialSoda
   [2]: https://github.com/Jcoderre
