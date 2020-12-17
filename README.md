@@ -3,8 +3,7 @@ Contains all the code for the week 13 for Machine Learning
 
 ### Week 13 overview
 
-This week we had to create a Machine learning API using the Azure Api  **Speech**.
-We used our voice to simulate conversation that happen inside an elevator.
+This week we had to create a Machine learning API using the Azure Api **Speech**. We used our voice to simulate a conversation that happen inside an elevator and see how well it can detect our voice and if it was able to translate it to text. From the **Speech** Service offered by Azure we have used *Speech-to-Text* and *Speaker Recognition*.
 
 
 #
@@ -18,7 +17,7 @@ We used our voice to simulate conversation that happen inside an elevator.
 > **Cons:** The **Speech API** from  **Azure** as some flaws where it wont recognize enrolled voice from conversation.
 
 
-
+#
 ### Languages used 
 
 > Ruby *(For Website page)*
