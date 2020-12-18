@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![](images/R2.png)
 # Machine Learning
 Contains all the code for the week 13 for Machine Learning
@@ -63,7 +62,6 @@ The new "Elevator Media" feature can be found in the lib folder.
 For a more in-depth look at how to set up the project in your own local environment, please head to:
 
 https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/master/README.md
-=======
 # TDD - Information on the tests
 
 All tests are in the spec folder, they can be performed by running `bundle exec rspec`
@@ -76,4 +74,3 @@ For a more in-depth look at how to set up the project in your own local environm
 
 https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/master/README.md
 
->>>>>>> a2651f7f1cd202459499916853ca5dd60bb259c5

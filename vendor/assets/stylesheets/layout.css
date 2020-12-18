@@ -9259,3 +9259,10 @@ section.dark-2 div.category-grid .card {
 	color:#999 !important; 
 	z-index:100;
 }
+
+.speechBlock {
+	float: left;
+	width: 33.33%;
+	padding: 10px;
+	height: 300px; /* Should be removed. Only for demonstration */
+}

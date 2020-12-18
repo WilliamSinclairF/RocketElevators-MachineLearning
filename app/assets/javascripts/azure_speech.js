@@ -87,3 +87,14 @@ window.addEventListener('DOMContentLoaded', async () => {
       console.log('ok');
     });
 });
+
+
+function showDisplay() {
+  var i = document.getElementsById("profileSelect")
+  if (i.style.display === "none") {
+    i.style.display = "block";
+  } else {
+    i.style.display = "none";
+  }
+}
+
