@@ -62,7 +62,7 @@ const showTestResult = (result, score) => {
   ).textContent = `Test result: ${result} - Score: ${score}`;
 };
 
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('load', () => {
   document
     .getElementById('checkAudioButton')
     .addEventListener('click', async () => {
