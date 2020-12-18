@@ -1,5 +1,5 @@
 var phraseDiv, statusDiv;
-var languageOptions, formatOptions, inputSource, filePicker, microphoneSource;
+var languageOptions, inputSource, filePicker, microphoneSource;
 var SpeechSDK;
 var recognizer;
 var reco;
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
   languageOptions = document.getElementById('languageOptions');
   languageTargetOptions = document.getElementById('languageTargetOptions');
   voiceOutput = document.getElementById('voiceOutput');
-  formatOptions = document.getElementById('formatOptions');
   inputSource = document.getElementById('inputSource');
   filePicker = document.getElementById('filePicker');
   microphoneSource = document.getElementById('microphoneSource');
