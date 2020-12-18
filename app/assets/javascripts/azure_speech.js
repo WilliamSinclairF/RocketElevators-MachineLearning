@@ -76,6 +76,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     .getElementById('uploadNewFileButton')
     .addEventListener('click', async () => {
       await uploadAudioFile('uploadNewFile');
+      location.reload();
       console.log('ok');
     });
 
@@ -88,13 +89,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-
 function showDisplay() {
-  var i = document.getElementsById("profileSelect")
-  if (i.style.display === "none") {
-    i.style.display = "block";
+  var i = document.getElementsById('profileSelect');
+  if (i.style.display === 'none') {
+    i.style.display = 'block';
   } else {
-    i.style.display = "none";
+    i.style.display = 'none';
   }
 }
-
