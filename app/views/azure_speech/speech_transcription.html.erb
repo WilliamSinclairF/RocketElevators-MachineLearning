@@ -1,68 +1,40 @@
-<div id="content">
-  <table>
-    <tr>
-      <td></td>
-      <td>
-        <h1 style="font-weight:500;">Speech Recognition</h1>
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Language:</td>
-      <td align="left">
-        <select id="languageOptions">
-          <option value="en-CA">English - CA</option>
-          <option value="en-GB">English - GB</option>
-          <option value="en-US" selected="selected">English - US</option>
-          <option value="fr-CA">French - CA</option>
-          <option value="fr-FR">French - FR</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Format:</td>
-      <td align="left">
+<section>
+  <div id="content" class='container'>
+    <h1 class='text-center'>Speech Recognition</h1>
+    <div class='d-flex justify-content-center'>
+      <form>
+        <div>
+          <label>Language:</label>
+          <select id="languageOptions">
+            <option value="en-CA">English - CA</option>
+            <option value="en-GB">English - GB</option>
+            <option value="en-US" selected="selected">English - US</option>
+            <option value="fr-CA">French - CA</option>
+            <option value="fr-FR">French - FR</option>
+          </select>
+        </div>
+        <label>Format:</label>
         <select id="formatOptions">
           <option value="Simple" selected="selected">Simple Result</option>
           <option value="Detailed">Detailed Result</option>
         </select>
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Input:</td>
-      <td align="left">
+        <label>Input:</label>
         <select id="inputSource">
           <option value="Mic" selected="selected">Microphone</option>
           <option value="File">Audio File</option>
         </select>
         <select id="microphoneSource" style="display:none">
         </select>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
         <input type="file" id="filePicker" accept=".wav" style="display:none" />
-      </td>
-    </tr>
-    <tr>
-      <td align="right"><b>Recognize Single Phrase:</b></td>
-      <td>
-        <button id="speechsdkStartRecognizeOnceAsync">START</button>
-        <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled">STOP</button>
-      </td>
-    </tr>
-    <tr>
-      <td align="right"><b>Continuous Speech Recognition:</b></td>
-      <td>
-        <button id="speechsdkStartContinuousRecognition">START</button>
-        <button id="speechsdkStopContinuousRecognition" disabled="disabled">STOP</button>
-      </td>
-    </tr>
-    <tr>
-      <td align="right"><b>Speech Translation:</b></td>
-      <td>
-        <button id="speechsdkStartContinuousTranslation">START</button>
-        <button id="speechsdkStopContinuousTranslation" disabled="disabled">STOP</button>
+        <label>Recognize Single Phrase:</label>
+        <button id="speechsdkStartRecognizeOnceAsync" class='btn btn-info'>START</button>
+        <button id="speechsdkStopRecognizeOnceAsync" class='btn btn-danger' disabled="disabled">STOP</button>
+        <label>Continuous Speech Recognition:</label>
+        <button id="speechsdkStartContinuousRecognition" class='btn btn-info'>START</button>
+        <button id="speechsdkStopContinuousRecognition" disabled="disabled" class='btn btn-danger'>STOP</button>
+        <label>Speech Translation:</label>
+        <button id="speechsdkStartContinuousTranslation" class='btn btn-info'>START</button>
+        <button id="speechsdkStopContinuousTranslation" disabled="disabled" class='btn btn-danger'>STOP</button>
         <select id="languageTargetOptions">
           <option value="Microsoft Server Speech Text to Speech Voice (ar-EG, Hoda)">Arabic - EG</option>
           <option value="Microsoft Server Speech Text to Speech Voice (ca-ES, HerenaRUS)">Catalan - ES
@@ -119,32 +91,22 @@
           <option value="Microsoft Server Speech Text to Speech Voice (zh-TW, Yating, Apollo)">Chinese -
             TW</option>
         </select>
-        <input id="voiceOutput" type="checkbox" checked>
-        <label for="voiceOutput">voice output</label>
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Results:</td>
-      <td align="left">
+        <label for="voiceOutput">voice output
+          <input id="voiceOutput" type="checkbox" checked>
+        </label>
+        <label>Results: </label>
         <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
-      </td>
-    </tr>
-    <tr>
-      <td align="right">Events:</td>
-      <td align="left">
-        <textarea id="statusDiv"
-                        style="display: inline-block;width:500px;height:200px;overflow: scroll;white-space: nowrap;"></textarea>
-      </td>
-    </tr>
-  </table>
-</div>
-<script>
-  function Initialize(onComplete) {
-      if (!!window.SpeechSDK) {
-          onComplete(window.SpeechSDK);
-      }
-  }
-  const key = "<%= ENV['AZURE_KEY'] %>"
-</script>
-<%= javascript_include_tag 'sdk' %>
-<%= javascript_include_tag 'transcribe' %>
+      </form>
+    </div>
+  </div>
+  <script>
+    function Initialize(onComplete) {
+        if (!!window.SpeechSDK) {
+            onComplete(window.SpeechSDK);
+        }
+    }
+    const key = "<%= ENV['AZURE_KEY'] %>"
+  </script>
+  <%= javascript_include_tag 'sdk' %>
+  <%= javascript_include_tag 'transcribe' %>
+</section>

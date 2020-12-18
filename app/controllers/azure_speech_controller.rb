@@ -38,7 +38,6 @@ class AzureSpeechController < ApplicationController
 
   def upload_audio
     uploaded_file = params[:file]
-    puts File.extname(uploaded_file.to_s)
     FileUtils.mkdir_p 'public/uploads/voice'
     File.open(
       Rails.root.join(
