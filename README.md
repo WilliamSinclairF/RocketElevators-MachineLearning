@@ -24,6 +24,35 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
 
 <hr />
 
+### Testing Zone
+You can find find the pages of this week by login to the website with: `Email: admin@admin.com` and `Password: admin123`.
+
+> Put the audio file on your local drive to test the *speaker transcribe*.
+
+![](images/speechUrl.png)
+
+- `Enroll` : The *enrole* section is use to create your voice profile inside the Database.
+- `Upload` : The *Upload* section is use to test this audio clip against a voice profile.
+- `Verify` : With the *verify* section you can test your Newly enroll profil ( or an older one) against and audio clip and verify if your test match !
+
+![](images/speechTranscribeUrl.png)
+
+Choose your language ex: *English* and your input ex: *Microphone*
+With the Speech Recognition we give you 3 choices to recognize:
+
+- *1 phrase*
+- *Continuous*
+- *Translator*
+
+Once your parameter selected you click on **Start** and see the magic !
+
+**URL :**
+
+- https://rocketelevators.tech/speech
+- https://rocketelevators.tech/speech/transcribe
+
+<hr />
+
 ### Languages used 
 
 - Ruby *(For Website page)*
@@ -49,28 +78,4 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
   [5]: https://github.com/WilliamSinclairF
 
 ![](images/teamlogo.png)
-
-
-# TDD - Information on the tests
-
-All tests are in the spec folder, they can be performed by running `bundle exec rspec`
-
-The new "Elevator Media" feature can be found in the lib folder.
-
-## Installing the project
-
-For a more in-depth look at how to set up the project in your own local environment, please head to:
-
-https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/master/README.md
-# TDD - Information on the tests
-
-All tests are in the spec folder, they can be performed by running `bundle exec rspec`
-
-The new "Elevator Media" feature can be found in the lib folder.
-
-## Installing the project
-
-For a more in-depth look at how to set up the project in your own local environment, please head to:
-
-https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System/blob/master/README.md
 
