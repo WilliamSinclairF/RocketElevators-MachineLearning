@@ -1,25 +1,30 @@
 <section>
   <div id="content" class='container'>
     <h1 class='text-center'>Speech Recognition</h1>
-    <div class='d-flex justify-content-center'>
+    <div class='d-flex justify-content-center text-center'>
       <form>
-        <div>
-          <label>Language:</label>
-          <select id="languageOptions">
-            <option value="en-CA">English - CA</option>
-            <option value="en-GB">English - GB</option>
-            <option value="en-US" selected="selected">English - US</option>
-            <option value="fr-CA">French - CA</option>
-            <option value="fr-FR">French - FR</option>
-          </select>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Language:</label>
+            <select id="languageOptions">
+              <option value="en-CA">English - CA</option>
+              <option value="en-GB">English - GB</option>
+              <option value="en-US" selected="selected">English - US</option>
+              <option value="fr-CA">French - CA</option>
+              <option value="fr-FR">French - FR</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Input:</label>
+            <select id="inputSource">
+              <option value="Mic" selected="selected">Microphone</option>
+              <option value="File">Audio File</option>
+            </select>
+            <select id="microphoneSource" style="display:none">
+            </select>
+          </div>
         </div>
-        <label>Input:</label>
-        <select id="inputSource">
-          <option value="Mic" selected="selected">Microphone</option>
-          <option value="File">Audio File</option>
-        </select>
-        <select id="microphoneSource" style="display:none">
-        </select>
+        <div></div>
         <input type="file" id="filePicker" accept=".wav" style="display:none" />
         <label>Recognize Single Phrase:</label>
         <button id="speechsdkStartRecognizeOnceAsync" type="button" class='btn btn-info'>START</button>
@@ -89,10 +94,12 @@
         <label for="voiceOutput">voice output
           <input id="voiceOutput" type="checkbox" checked>
         </label>
-        <label>Results: </label>
-        <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
-        <label>Status: </label>
-        <textarea id="statusDiv" style="display: inline-block;width:500px;height:200px;overflow: scroll;white-space: nowrap;"></textarea>
+        <div>
+          <label>Results: </label>
+          <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
+          <label>Status: </label>
+          <textarea id="statusDiv" style="display: inline-block;width:500px;height:200px;overflow: scroll;white-space: nowrap;"></textarea>
+        </div>
       </form>
     </div>
   </div>
