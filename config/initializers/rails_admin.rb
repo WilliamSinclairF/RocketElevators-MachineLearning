@@ -95,7 +95,10 @@ RailsAdmin.config do |config|
 
   config.navigation_static_label = 'Tools'
   config.navigation_static_links = {
-    'Customer Map' => '/addresses', 'Intervention Form' => '/interventions/new'
+    'Customer Map' => '/addresses',
+    'Intervention Form' => '/interventions/new',
+    'Speech  Recognition' => '/speech',
+    'Speech Transcription' => '/speech/transcribe'
   }
 
   ## == CancanCan ==

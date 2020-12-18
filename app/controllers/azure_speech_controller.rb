@@ -4,7 +4,6 @@ class AzureSpeechController < ApplicationController
   include AzureSpeechHelper
 
   def index
-    # get_azure_token
     @files =
       Dir['public/uploads/voice/*.wav'].select { |f| File.file? f }.map do |f|
         File.basename f
@@ -39,7 +38,6 @@ class AzureSpeechController < ApplicationController
 
   def upload_audio
     uploaded_file = params[:file]
-    puts File.extname(uploaded_file.to_s)
     FileUtils.mkdir_p 'public/uploads/voice'
     File.open(
       Rails.root.join(
