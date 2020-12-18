@@ -4,7 +4,7 @@ lock '~> 3.14.1'
 before 'deploy', 'rvm1:install:ruby'
 set :rvm_map_bins, %w[rake gem bundle ruby puma pumactl]
 set :application, 'team_will_sinclair'
-set :repo_url, 'git@github.com:WilliamSinclairF/Rocket-Elevator-Foundation.git'
+set :repo_url, 'git@github.com:codebox-AI-Week/RocketElevators-MachineLearning.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
