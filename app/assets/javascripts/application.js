@@ -24,6 +24,7 @@
 //= require chartkick
 //= require Chart.bundle
 //= require rails_admin/themes/material/ui.js
+//= require bootstrap.js
 //= require_tree .
 //= stub 'quote.js'
 //= stub 'interventions.js'

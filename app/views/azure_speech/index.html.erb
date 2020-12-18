@@ -2,7 +2,9 @@
   <%= javascript_include_tag 'azure_speech' %>
 <% end %>
 <h1 class="text-center">Azure Speech Services</h1>
-<h3 class="text-center">Create New Profile</h3>
+<div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
 <section>
   <div class="container row align-center m-auto">
     <div class="col-md-3 speechBlock" >
@@ -11,7 +13,7 @@
         <label >Enroll a new profile with an audio clip of your voice.<br>
           (.wav files only)</label>
         <hr>
-        <input type="file" style="display: none" id="uploadAudioSignatureFile" multiple>
+        <input type="file" style="display: none" id="uploadAudioSignatureFile" accept=".wav">
         <div>
           <button type="button" class="btn btn-blue justify-content-center mt-70 mb-60" id="buttonEnroll" onclick="document.getElementById('uploadAudioSignatureFile').click();">Select files</button>
           <i class="fas fa-paperclip"></i>
@@ -30,7 +32,7 @@
           <label for="uploadFile">Upload new audio clip to test against a profile. <br>
             (.wav files only)</label>
           <hr>
-          <input type="file" id="uploadNewFile" class='form-control-file' style="display: none" accept=".wav">
+          <input type="file" id="uploadNewFile" class='form-control-file' style="display: none" accept=".wav" multiple>
           <div>
             <button type="button" class="btn btn-blue justify-content-center mt-70 mb-60" id="buttonUpload" onclick="document.getElementById('uploadNewFile').click();">Select files</button>
             <i class="fas fa-paperclip"></i>

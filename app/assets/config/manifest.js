@@ -15,7 +15,6 @@
 //= link owl.theme.css
 //= link owl.transitions.css
 //= link jquery-3.3.1.min.js
-//= link bootstrap.min.js
 //= link scripts
 //= link owl.carousel.js
 //= link owl.carousel.min.js
