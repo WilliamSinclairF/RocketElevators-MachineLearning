@@ -24,6 +24,15 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
 
 <hr />
 
+### For test pupose
+You can find find the pages of this week by login to the website with: `Email: admin@admin.com` and `Password: admin123`.
+**URL :**
+
+- https://rocketelevators.tech/speech
+- https://rocketelevators.tech/speech/transcribe
+
+<hr />
+
 ### Languages used 
 
 - Ruby *(For Website page)*
