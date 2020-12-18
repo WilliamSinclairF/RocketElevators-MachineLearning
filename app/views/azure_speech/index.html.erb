@@ -1,3 +1,5 @@
+
+
 <h1 class="text-center">Azure Speech Services</h1>
 <h3 class="text-center">Create New Profile</h3>
 
@@ -5,7 +7,7 @@
 
   <div class="container row align-center m-auto">
     <div class="col-md-4" style="background-color:rgba(169, 167, 164, 0.5">
-    <h3 class="text-center">Enroll Profile</h3>
+    <h3 class="text-center pt-15">Enroll Profile</h3>
       <form class="text-center">
         <label >Enroll a new profile with an audio clip (.wav files only)</label>
         <hr>
@@ -22,7 +24,7 @@
       </form>
     </div>
     <div class='text-center col-md-4' style="background-color:rgba(130, 130, 130, 0.5">
-      <h3 class="text-center">Upload Audio</h3>
+      <h3 class="text-center pt-15">Upload Audio</h3>
       <form class='d-flex justify-content-center'>
         <div class="form-group">
           <label for="uploadFile">Upload new audio clip to test against a profile (.wav files only)</label>
@@ -41,7 +43,7 @@
     <div class='d-flex justify-content-center text-center col-md-4' style="background-color:rgba(169, 167, 164, 0.5">
       <form>
         <div class='p-3'>
-          <h3>Verify Speaker</h3>
+          <h3 class="pt-15">Verify Speaker</h3>
           <h3>1. Select Audio Clip</h3>
           <select id="fileSelect">
             <% @files.each do |file| %>
