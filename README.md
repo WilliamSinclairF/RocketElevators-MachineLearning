@@ -31,9 +31,9 @@ You can find find the pages of this week by login to the website with: `Email: a
 
 ![](images/speechUrl.png)
 
-`Enroll` : The *enrole* section is use to create your voice profile inside the Database.
-`Upload` : The *Upload* section is use to test this audio clip against a voice profile.
-`Verify` : With the *verify* section you can test your Newly enroll profil ( or an older one) against and audio clip and verify if your test match !
+- `Enroll` : The *enrole* section is use to create your voice profile inside the Database.
+- `Upload` : The *Upload* section is use to test this audio clip against a voice profile.
+- `Verify` : With the *verify* section you can test your Newly enroll profil ( or an older one) against and audio clip and verify if your test match !
 
 ![](images/speechTranscribeUrl.png)
 
