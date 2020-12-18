@@ -24,8 +24,28 @@ We then enroll the *.wav* sound and extract them for modeling and then send to t
 
 <hr />
 
-### For test pupose
+### Testing Zone
 You can find find the pages of this week by login to the website with: `Email: admin@admin.com` and `Password: admin123`.
+
+> Put the audio file on your local drive to test the *speaker transcribe*.
+
+![](images/speechUrl.png)
+
+`Enroll` : The *enrole* section is use to create your voice profile inside the Database.
+`Upload` : The *Upload* section is use to test this audio clip against a voice profile.
+`Verify` : With the *verify* section you can test your Newly enroll profil ( or an older one) against and audio clip and verify if your test match !
+
+![](images/speechTranscribeUrl.png)
+
+Choose your language ex: *English* and your input ex: *Microphone*
+With the Speech Recognition we give you 3 choices to recognize:
+
+- *1 phrase*
+- *Continuous*
+- *Translator*
+
+Once your parameter selected you click on **Start** and see the magic !
+
 **URL :**
 
 - https://rocketelevators.tech/speech
