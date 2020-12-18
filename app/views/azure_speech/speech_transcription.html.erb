@@ -1,3 +1,10 @@
+<% provide :head_tags do %>
+  <script>
+    const key = "<%= ENV['AZURE_KEY'] %>"
+  </script>
+  <%= javascript_include_tag 'sdk' %>
+  <%= javascript_include_tag 'transcribe' %>
+<% end %>
 <section>
   <div id="content" class='container'>
     <h1 class='text-center'>Speech Recognition</h1>
@@ -96,14 +103,11 @@
       </form>
     </div>
   </div>
-  <script>
-    function Initialize(onComplete) {
-        if (!!window.SpeechSDK) {
-            onComplete(window.SpeechSDK);
-        }
-    }
-    const key = "<%= ENV['AZURE_KEY'] %>"
-  </script>
-  <%= javascript_include_tag 'sdk' %>
-  <%= javascript_include_tag 'transcribe' %>
 </section>
+<script>
+  function Initialize(onComplete) {
+      if (!!window.SpeechSDK) {
+          onComplete(window.SpeechSDK);
+      }
+  }
+</script>
