@@ -1,29 +1,49 @@
+const loadingUpdater = loadingText => {
+  document.getElementById('loadingSpinner').classList.remove('hidden');
+  document.getElementById('loadingStatusText').textContent = loadingText;
+};
+
 const createProfile = async () => {
+  loadingUpdater('Creating profile, please wait');
   const response = await fetch('/create_profile_id', {
     headers: {
       Accept: 'application/json',
     },
   });
+  if (response.ok) {
+    loadingUpdater('Enrolling profile using selected audio clip, please wait');
+  }
   const parsed = await response.json();
   const newProfileId = parsed.profileId;
   await uploadAudioFile('uploadAudioSignatureFile');
   const fileName = document.getElementById('uploadAudioSignatureFile').files[0]
     .name;
-  await fetch(
+  const enrollmentResponse = await fetch(
     `/enroll_profile?file_name=${fileName}&profile_id=${newProfileId}`
   );
+  if (enrollmentResponse.ok) {
+    document.getElementById('loadingStatusText').textContent =
+      'Profile created, refreshing page';
+  } else {
+    document.getElementById('loadingStatusText').textContent =
+      'An error occured, please verify your Azure subscription';
+  }
 };
 
 const verifyAudio = async (audioFileName, profileId) => {
-  document.getElementById('resultText').textContent = 'Loading, please wait';
+  loadingUpdater(
+    'Comparing audio clip against selected voice profile, please wait'
+  );
   try {
     const response = await fetch(
       `/verify_audio?file_name=${audioFileName}&profile_id=${profileId}`
     );
     if (response.ok) {
+      document.getElementById('loadingSpinner').classList.add('hidden');
       return response.json();
     } else {
-      resultPlaceHolderText.textContent = `There was an error, please try again later`;
+      document.getElementById('loadingStatusText').textContent =
+        'An error occured, please contact an administrator';
     }
   } catch (e) {
     console.log(e);
@@ -35,18 +55,23 @@ const uploadAudioFile = async element => {
   if (getExtension(audioFile.name) === 'wav') {
     let formData = new FormData();
     formData.append('file', audioFile);
+    loadingUpdater('Uploading audio clip, please wait...');
     const response = await fetch('/upload_audio', {
       method: 'POST',
       body: formData,
     });
     if (response.ok) {
+      document.getElementById('loadingSpinner').classList.add('hidden');
       console.log('uploaded');
     } else {
       document.getElementById(
-        'resultText'
+        'loadingStatusText'
       ).textContent = `Unable to upload file`;
     }
   } else {
+    document.getElementById(
+      'loadingStatusText'
+    ).textContent = `Unable to upload file, only .wav files are accepted`;
     console.log('only wav files are accepted');
   }
 };

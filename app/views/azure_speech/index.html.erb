@@ -1,11 +1,19 @@
 <% provide :head_tags do %>
   <%= javascript_include_tag 'azure_speech' %>
 <% end %>
-<h1 class="text-center">Azure Speech Services</h1>
-<div class="spinner-border text-primary" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
 <section>
+  <h1 class="text-center">Azure Speech Services</h1>
+  <div id="loadingSpinner" class='hidden'>
+    <h3 class="text-center text-blue fw-300" id='loadingStatusText'></h3>
+    <div class='w-100p d-flex justify-content-center'>
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
   <div class="container row align-center m-auto">
     <div class="col-md-3 speechBlock" >
       <h3 class="text-center pt-15">Enroll Profile</h3>
