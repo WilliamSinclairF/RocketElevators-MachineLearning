@@ -4,7 +4,7 @@ class AzureSpeechController < ApplicationController
   include AzureSpeechHelper
 
   def index
-    get_azure_token
+    # get_azure_token
     @files =
       Dir['public/uploads/voice/*.wav'].select { |f| File.file? f }.map do |f|
         File.basename f

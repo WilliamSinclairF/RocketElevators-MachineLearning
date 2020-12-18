@@ -1,18 +1,24 @@
-<section>
   <h1 class="text-center">Azure Speech Services</h1>
   <h3 class="text-center">Create New Profile</h3>
-  <form>
-    <input type="file" id="uploadAudioSignatureFile" multiple>
-    <button type="button" class="btn btn-primary" id="enrollProfileButton">Enroll Profile</button>
-  </form>
-  <div class="container row">
-    <div class='text-center col-md-8'>
+
+<section>
+
+  <div class="container row align-center m-auto">
+    <div class="col-md-4">
+    <h3 class="text-center">Enroll Profile</h3>
+      <form>
+        <input type="file" id="uploadAudioSignatureFile" multiple>
+        <button type="button" class="btn btn-primary" id="enrollProfileButton">Enroll Profile</button>
+      </form>
+    </div>
+    <div class='text-center col-md-4'>
       <h3 class="text-center">Upload Audio</h3>
       <form class='d-flex justify-content-center'>
         <div class="form-group">
           <label for="uploadFile">Upload new audio clip to test against a profile (.wav files only)</label>
           <input type="file" id="uploadNewFile" class='form-control-file' accept=".wav">
-          <button type="button" class="btn btn-primary" id="uploadNewFileButton">Upload</button>
+          <button type="button" class="btn btn-primary justify-content-center" id="uploadNewFileButton">Upload</button>
+          <i class="fas fa-cloud"></i>
         </div>
       </form>
     </div>
@@ -38,7 +44,7 @@
           </select>
         </div>
         <h3 id="resultText"></h3>
-        <button type="button" class="btn btn-primary" id="checkAudioButton">Verify Profile</button>
+        <button type="button" class="btn btn-primary justify-content-center" id="checkAudioButton">Verify Profile</button>
       </form>
     </div>
   </div>
